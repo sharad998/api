@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_page1_phone_otp"
+    app:startDestination="@id/phone">
+
+    <fragment
+        android:id="@+id/phone"
+        android:name="com.example.one_tap.presentation.fragments.Phone"
+        android:label="fragment_phone"
+        tools:layout="@layout/fragment_phone" >
+
+        <action
+            android:id="@+id/action_phone_to_OTP"
+            app:destination="@id/OTP"
+            app:enterAnim="@anim/fragment_close_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popEnterAnim="@anim/fragment_close_enter"
+            app:popExitAnim="@anim/fragment_close_exit" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/OTP"
+        android:name="com.example.one_tap.presentation.fragments.OTP"
+        android:label="fragment_o_t_p"
+        tools:layout="@layout/fragment_o_t_p">
+        <action
+            android:id="@+id/action_OTP_to_password"
+            app:destination="@id/password"
+            app:enterAnim="@anim/fragment_close_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popEnterAnim="@anim/fragment_close_enter"
+            app:popExitAnim="@anim/fragment_close_exit" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/password"
+        android:name="com.example.one_tap.presentation.fragments.Password"
+        android:label="fragment_password"
+        tools:layout="@layout/fragment_password" />
+</navigation>

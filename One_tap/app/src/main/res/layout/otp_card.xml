@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <merge>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cream">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|center_horizontal|center_vertical"
+        android:layout_margin="16dp"
+        android:background="@color/white"
+
+        android:checkable="true"
+        android:clickable="true"
+        android:fadeScrollbars="true"
+
+        android:focusable="true"
+        android:padding="8dp"
+        app:cardBackgroundColor="@color/pink_cream"
+        app:cardCornerRadius="8dp"
+
+        app:cardElevation="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearance="@style/ShapeAppearance.MaterialComponents.MediumComponent"
+        app:strokeColor="@color/stroke_color"
+        app:strokeWidth="1dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@color/colorPrimaryDark"
+                android:dividerPadding="8dp"
+                android:orientation="vertical"
+                android:showDividers="end">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="12dp"
+                    android:gravity="center_horizontal"
+                    android:padding="8dp"
+                    android:text="Your OTP Here"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+
+
+                <LinearLayout
+                    android:id="@+id/layout_otp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    app:layout_constraintStart_toStartOf="@id/layout_header"
+                    app:layout_constraintTop_toBottomOf="@id/layout_header">
+
+                    <EditText
+                        android:id="@+id/editTextOne"
+                        android:layout_width="40sp"
+                        android:layout_height="42sp"
+                        android:inputType="number"
+                        android:maxLength="1"
+                        android:nextFocusRight="@id/editTextTwo"
+                        android:textColor="#000000"
+                        android:textColorHint="@color/colorPrimaryDark"
+                        android:textStyle="bold"
+                        android:cursorVisible="false"/>
+
+                    <requestFocus />
+
+                    <EditText
+                        android:id="@+id/editTextTwo"
+                        android:layout_width="40sp"
+                        android:layout_height="42sp"
+                        android:clickable="false"
+                        android:defaultFocusHighlightEnabled="true"
+                        android:inputType="number"
+                        android:maxLength="1"
+                        android:nextFocusLeft="@id/editTextOne"
+                        android:nextFocusRight="@id/editTextThree"
+                        android:pointerIcon="none"
+                        android:textColor="#000000"
+                        android:textColorHint="@color/colorPrimaryDark"
+                        android:textStyle="bold"
+                        android:cursorVisible="false"
+                        />
+
+                    <EditText
+                        android:id="@+id/editTextThree"
+                        android:layout_width="40sp"
+                        android:layout_height="42sp"
+                        android:inputType="number"
+                        android:maxLength="1"
+                        android:nextFocusRight="@id/editTextFour"
+                        android:nextFocusLeft="@id/editTextTwo"
+                        android:textColor="#000000"
+                        android:textColorHint="@color/colorPrimaryDark"
+                        android:textStyle="bold"
+                        android:cursorVisible="false"/>
+
+                    <EditText
+                        android:id="@+id/editTextFour"
+                        android:layout_width="40sp"
+                        android:layout_height="42sp"
+                        android:inputType="number"
+                        android:maxLength="1"
+                        android:nextFocusLeft="@id/editTextThree"
+                        android:textColor="#000000"
+                        android:textColorHint="@color/colorPrimaryDark"
+                        android:textStyle="bold"
+                        android:cursorVisible="false"/>
+
+                    <EditText
+                        android:id="@+id/editTextFive"
+                        android:layout_width="40sp"
+                        android:layout_height="42sp"
+                        android:inputType="number"
+                        android:maxLength="1"
+                        android:nextFocusLeft="@id/editTextFour"
+                        android:textColor="#000000"
+                        android:textColorHint="@color/colorPrimaryDark"
+                        android:textStyle="bold"
+                        android:cursorVisible="false"/>
+
+                    <EditText
+                        android:id="@+id/editTextSix"
+                        android:layout_width="40sp"
+                        android:layout_height="42sp"
+                        android:inputType="number"
+                        android:maxLength="1"
+                        android:nextFocusLeft="@id/editTextFive"
+                        android:textColor="#000000"
+                        android:textColorHint="@color/colorPrimaryDark"
+                        android:textStyle="bold"
+                        android:cursorVisible="false"/>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/submitOTPClick"
+                    style="?attr/borderlessButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:text="Submit"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
+
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="18sp"
+
+
+                    app:rippleColor="@color/cream"
+                    app:strokeColor="@color/stroke_color"
+
+                    app:strokeWidth="8dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/resendOTPClick"
+                    style="?attr/borderlessButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:text="Resend"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
+
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="18sp"
+
+
+                    app:rippleColor="@color/cream"
+                    app:strokeColor="@color/stroke_color"
+
+                    app:strokeWidth="8dp"
+
+                    android:visibility="gone"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+    </merge>
+
+</layout>

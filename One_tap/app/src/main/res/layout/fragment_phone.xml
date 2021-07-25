@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+       <variable
+           name="PhoneVM"
+           type="com.example.one_tap.presentation.viewmodel.PhoneAndOTPViewModel"/>
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.fragments.Phone">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <LinearLayout
+        android:id="@+id/phone_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="Enter Mobile No:"
+           android:textSize="28sp"
+           android:textStyle="bold"
+           android:textAlignment="center"
+           android:layout_marginBottom="16dp"
+           android:textColor="@color/white"
+           />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Phone Number"
+            android:inputType="number"
+            android:maxLength="10"
+            android:id="@+id/tenDigitNumber"
+            android:textColor="@color/white"
+            android:textSize="32sp" />
+    </LinearLayout>
+
+
+    <Button
+        style="?attr/borderlessButtonStyle"
+        android:elevation="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/GetOTPClick"
+
+        android:gravity="center"
+        android:padding="16dp"
+
+        android:text="get_otp"
+        android:textSize="32sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintCircleAngle="@integer/config_navAnimTime"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/phone_layout" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

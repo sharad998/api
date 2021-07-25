@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <data>
+        <variable
+            name="myViewModel"
+            type="com.example.circlecalc.CalcViewModel" />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="15dp"
+        tools:context=".MainActivity">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_marginBottom="5dp"
+        android:ems="10"
+        android:text="@={myViewModel.radius}"
+        android:textSize="20sp"
+        android:hint="Radius of the circle"
+        android:inputType="textPersonName"
+        android:id="@+id/radius_edit_text"
+        android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/calculate_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Calculate"
+            android:layout_marginBottom="15dp"
+            android:onClick="@{()->myViewModel.calculate()}"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_marginBottom="5dp"
+            android:ems="10"
+            android:text="Area:"
+            android:textSize="20sp"
+            android:id="@+id/view_area_text_view"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_marginBottom="5dp"
+            android:ems="10"
+            android:text="@={myViewModel.area}"
+            android:textSize="20sp"
+            android:id="@+id/area_text_view"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_marginBottom="5dp"
+            android:ems="10"
+            android:text="Circumference:"
+            android:textSize="20sp"
+            android:id="@+id/view_circumference_text_view"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_marginBottom="5dp"
+            android:ems="10"
+            android:text="@={myViewModel.circumference}"
+            android:textSize="20sp"
+            android:id="@+id/circumference_text_view"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+
+</layout>

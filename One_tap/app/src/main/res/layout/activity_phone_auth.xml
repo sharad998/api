@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_layout"
+
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+
+    android:background="@color/grey_100"
+
+    android:orientation="vertical"
+
+    android:weightSum="4">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+
+        android:gravity="center_horizontal"
+
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+
+        android:id="@+id/main_linear_layout">
+
+
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+
+            android:layout_height="0dp"
+
+            android:layout_weight="3"
+
+            android:gravity="center_horizontal"
+
+            android:orientation="vertical"
+            android:id="@+id/top_screen">
+
+
+            <ImageView
+
+                android:id="@+id/icon"
+
+                style="@style/ThemeOverlay.FirebaseIcon"
+
+                android:layout_width="wrap_content"
+
+                android:layout_height="174dp"
+
+                android:contentDescription="@string/desc_firebase_lockup"
+
+                android:src="@drawable/firebase_lockup_400"
+                android:background="@color/black"/>
+
+            <TextView
+
+                android:id="@+id/titleText"
+
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+
+                android:layout_marginBottom="@dimen/title_bottom_margin"
+
+                android:text="@string/phone_title_text"
+
+                android:theme="@style/ThemeOverlay.MyTitleText" />
+
+
+
+            <TextView
+
+                android:id="@+id/status"
+
+                style="@style/ThemeOverlay.MyTextDetail"
+
+                android:text="@string/signed_out" />
+
+
+
+            <TextView
+
+                android:id="@+id/detail"
+
+                style="@style/ThemeOverlay.MyTextDetail"
+
+                tools:text="Firebase User ID: 123456789abc" />
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+    <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        tools:context=".ISD"
+        android:orientation="vertical"
+        android:background="@color/light_blue"
+        android:id="@+id/details_screen"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="@id/main_linear_layout"
+        app:layout_constraintBottom_toTopOf="@+id/signedInButtons"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:id="@+id/list"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical"
+
+            android:id="@+id/layout_detail">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_horizontal_margin"
+                android:layout_marginBottom="0dp"
+                android:layout_weight="2.0"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+
+
+                android:id="@+id/layout_name"
+                android:hint="Name">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:id="@+id/l_name"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:baselineAligned="true">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/activity_horizontal_margin"
+                    android:layout_weight="2.0"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+
+                    android:hint="Mobile No"
+                    android:id="@+id/layout_mobile">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/l_mobile"
+                        android:inputType="phone"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/activity_horizontal_margin"
+                    android:layout_weight="2.0"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:endIconMode="dropdown_menu"
+                    app:endIconCheckable="true"
+                    android:hint="Gender"
+                    android:id="@+id/layout_gender">
+                    <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:imeOptions="flagNoExtractUi"
+                        android:id="@+id/l_gender"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_horizontal_margin"
+                android:layout_weight="2.0"
+
+                android:hint="Address"
+                android:id="@+id/layout_address"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+
+                app:startIconDrawable="@drawable/baseline_location_searching_black_24">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/l_address"
+                    android:inputType="textPostalAddress" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="20dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/saveDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="2.0"
+
+                    android:padding="5dp"
+                    android:text="Save" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/log"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|right"
+                android:layout_margin="30dp"
+                android:contentDescription="fab_content_desc"
+                app:elevation="6dp"
+                app:fabSize="normal"
+                app:srcCompat="@drawable/round_fact_check_black_18"
+                />
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+
+        android:layout_height="0dp"
+
+        android:layout_weight="1"
+
+        android:background="@color/grey_300"
+
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toBottomOf="@+id/main_linear_layout"
+        android:id="@+id/sub_linear_layout">
+
+
+
+        <LinearLayout
+
+            android:id="@+id/phoneAuthFields"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical"
+
+            android:paddingLeft="16dp"
+
+            android:paddingRight="16dp">
+
+
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+
+                android:orientation="horizontal"
+
+                android:weightSum="2.0">
+
+
+
+                <EditText
+
+                    android:id="@+id/fieldPhoneNumber"
+
+                    android:layout_width="0dp"
+
+                    android:layout_height="wrap_content"
+
+                    android:hint="@string/hint_phone_number"
+
+                    android:layout_weight="1.0"
+
+                    android:inputType="phone"/>
+
+
+
+                <EditText
+
+                    android:id="@+id/fieldVerificationCode"
+
+                    android:layout_width="0dp"
+
+                    android:layout_height="wrap_content"
+
+                    android:hint="@string/hint_verification_code"
+
+                    android:layout_weight="1.0"
+
+                    android:inputType="number"/>
+
+
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+
+                android:orientation="horizontal"
+
+                android:weightSum="3.0">
+
+
+
+                <com.google.android.material.button.MaterialButton
+
+                    android:id="@+id/buttonStartVerification"
+
+                    android:layout_marginStart="@dimen/button_horizontal_margin"
+
+                    android:layout_marginEnd="@dimen/button_horizontal_margin"
+
+                    android:layout_width="0dp"
+
+                    android:layout_height="wrap_content"
+
+                    android:layout_weight="1.0"
+
+                    android:text="@string/start_phone_auth"/>
+
+
+
+                <com.google.android.material.button.MaterialButton
+
+                    android:id="@+id/buttonVerifyPhone"
+
+                    android:layout_marginStart="@dimen/button_horizontal_margin"
+
+                    android:layout_marginEnd="@dimen/button_horizontal_margin"
+
+                    android:layout_width="0dp"
+
+                    android:layout_height="wrap_content"
+
+                    android:layout_weight="1.0"
+
+                    android:text="@string/verify_phone_auth"/>
+
+
+
+                <com.google.android.material.button.MaterialButton
+
+                    android:id="@+id/buttonResend"
+
+                    android:layout_marginStart="@dimen/button_horizontal_margin"
+
+                    android:layout_marginEnd="@dimen/button_horizontal_margin"
+
+                    android:layout_width="0dp"
+
+                    android:layout_height="wrap_content"
+
+                    android:layout_weight="1.0"
+
+                    android:text="@string/resend_phone_auth"/>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+    </RelativeLayout>
+
+
+
+
+
+
+
+
+    <LinearLayout
+
+        android:id="@+id/signedInButtons"
+
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+
+        android:layout_centerInParent="true"
+
+        android:orientation="horizontal"
+
+        android:paddingLeft="16dp"
+
+        android:paddingRight="16dp"
+
+        android:visibility="gone"
+
+        android:weightSum="1.0"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+
+
+        <com.google.android.material.button.MaterialButton
+
+            android:id="@+id/signOutButton"
+
+            android:layout_width="0dp"
+
+            android:layout_height="wrap_content"
+
+            android:layout_weight="1.0"
+
+            android:text="@string/sign_out"
+
+            android:theme="@style/ThemeOverlay.MyDarkButton" />
+
+
+
+    </LinearLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
